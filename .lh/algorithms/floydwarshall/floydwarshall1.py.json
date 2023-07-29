@@ -1,0 +1,26 @@
+{
+    "sourceFile": "algorithms/floydwarshall/floydwarshall1.py",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 2,
+            "patches": [
+                {
+                    "date": 1690646909354,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1690646953966,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,5 @@\n-def floydWarshall(map_):\n+def floydwarshall(map_):\n     for search in map_:\n         for target in map_:\n             if search == target:\n                 continue\n"
+                },
+                {
+                    "date": 1690647412730,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,11 +1,12 @@\n def floydwarshall(map_):\n+    # 경로 웨이트를 Boolean으로 설정하여 순위를 결정하는 문제의 해결법\n     for search in map_:\n         for target in map_:\n-            if search == target:\n+            if search == target: \n                 continue\n             for dest in map_[search]:\n-                if search == dest or target == dest:\n+                if search == dest or target == dest: # 도착지점과 시작지점이 같은경우 제외: 테이블이 자기 자신으로 향하는 루트가 존재할경우 불필요 \n                     continue\n                 if map_[target][dest] == None:\n                     if map_[target][search] == map_[search][dest] != None:\n                         if map_[target][search] == map_[search][dest]: \n"
+                }
+            ],
+            "date": 1690646909354,
+            "name": "Commit-0",
+            "content": "def floydWarshall(map_):\n    for search in map_:\n        for target in map_:\n            if search == target:\n                continue\n            for dest in map_[search]:\n                if search == dest or target == dest:\n                    continue\n                if map_[target][dest] == None:\n                    if map_[target][search] == map_[search][dest] != None:\n                        if map_[target][search] == map_[search][dest]: \n                            map_[target][dest] = map_[search][dest] \n    return map_"
+        }
+    ]
+}
